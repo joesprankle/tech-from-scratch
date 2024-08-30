@@ -1,0 +1,45 @@
+{
+    "fullname": "Joe Sprankle",
+    "configurations": [
+        {
+            "linkname": "LinkedIn Personal Profile Growth",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_j02eovr9fd",
+            "order": "1"
+        },
+        {
+            "linkname": "LinkedIn Company Followers",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_byrbvnr9fd",
+            "order": "2"
+        },
+        {
+            "linkname": "LinkedIn Content Engagement",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_najoi4hcfd",
+            "order": "3"
+        },
+        {
+            "linkname": "Website Traffic & Brand Search Trend",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_vjufh08tfd",
+            "order": "4"
+        },
+        {
+            "linkname": "Conversions, Opportunities & Funnel Progress",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_po8s0f9tfd",
+            "order": "5"
+        },
+        {
+            "linkname": "Direct Response Leads",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_orvd5gp9fd",
+            "order": "6"
+        },
+        {
+            "linkname": "Organic LinkedIn Posts",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_8tjctis0fd",
+            "order": "7"
+        },
+        {
+            "linkname": "Sponsored LinkedIn Posts",
+            "url": "https://lookerstudio.google.com/embed/reporting/daec8fc9-f0c4-4818-aead-ca0c23d914a6/page/p_j523hsz3fd",
+            "order": "8"
+        }
+    ]
+}

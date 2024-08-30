@@ -1,0 +1,30 @@
+{
+  "name": "brandgenjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.1.12",
+    "aws-amplify": "^6.3.8",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.0.4",
+    "@aws-amplify/backend-cli": "^1.1.0",
+    "aws-cdk": "^2.147.3",
+    "aws-cdk-lib": "^2.147.3",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.23.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.3"
+  }
+}
