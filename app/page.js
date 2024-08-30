@@ -39,16 +39,15 @@ function App() {
     // Fetch list of files in storage
     async function fetchFiles() {
       try {
-        const result = await list({ path: 'picture-submissions/' });
-        // result is usually an object that contains an array under `results` or similar key
-        const files = result?.results || []; // Safely access the array or default to an empty array
-        setFileList(files);
-        console.log(files);
+        const result = await list({path:'picture-submissions/'});
+        // Ensure we're setting an array to fileList
+        setFileList(result.items || []);
+        console.log(JSON.stringify(result,null,2));
       } catch (error) {
         console.error('Error listing files:', error);
+        setFileList([]); // Set to empty array in case of error
       }
     }
-    
 
     getUserAttributes();
     fetchFiles();
@@ -108,17 +107,19 @@ function App() {
                 </button>
               </div>
               <div className="mt-4">
-                <h2>Uploaded Files:</h2>
-                <ul>
-                  {fileList.map(file => (
-                    <li key={file.key}>
-                      <a href={file.url} target="_blank" rel="noopener noreferrer">
-                        {file.key}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <h2>Uploaded Files:</h2>
+            {Array.isArray(fileList) && fileList.length > 0 ? (
+              <ul>
+                {fileList.map((file, index) => (
+                  <li key={file.path || index}>
+                    {file.path}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No files uploaded yet.</p>
+            )}
+          </div>
               <button onClick={signOut}>Sign out</button>
             </main>
           </div>
