@@ -5,13 +5,13 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
       <div className="text-white">
-      <img src="/img/mainnerve-logo.png" alt="Logo" width="320" height="160" />
+      <img src="/img/aws-logo.png" alt="Logo" width="150" height="100%" />
       </div>
       <div className="relative">
         <input
           type="text"
           className="pl-3 pr-10 py-2 rounded-lg text-sm bg-gray-700 text-white placeholder-gray-400"
-          placeholder="Search for..."
+          placeholder="I don't work (yet)..."
         />
         <button className="absolute right-0 top-0 mt-2 mr-3">
           <i className="fas fa-search text-white"></i>

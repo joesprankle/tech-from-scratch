@@ -108,9 +108,10 @@ function App() {
                   />
                 )}
               </div>
+              <img src="/img/flow.png" alt="Logo" width="750" height="100%" />
               <div className="mt-4">
               <h1>Upload a File:</h1>
-              <div className="bg-white p-4 rounded-lg shadow-md">
+              <div className="bg-black p-4 rounded-lg shadow-md">
                 <input type="file" id="file" onChange={handleFileChange} />
                 <button id="upload" onClick={handleUploadClick} className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                   Upload File
@@ -121,7 +122,7 @@ function App() {
                 <h1>Uploaded Files:</h1>
                 <div className="grid grid-cols-3 gap-4">
                   {Array.isArray(fileList) && fileList.map(file => (
-                    <div key={file.path} className="bg-white p-4 rounded-lg shadow-md">
+                    <div key={file.path} className="bg-black p-4 rounded-lg shadow-md">
                       <div className="font-semibold">{file.path.split('/').pop()}</div>
                       <div className="text-sm text-gray-500">{(file.size / 1024 / 1024).toFixed(2)} MB</div>
                       <a href={file.url.toString()} target="_blank" rel="noopener noreferrer">

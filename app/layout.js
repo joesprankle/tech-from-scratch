@@ -7,8 +7,8 @@ import Head from 'next/head';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Cyber-BrandGen",
-  description: "The Data You Need",
+  title: "AWS Transfer Explorer",
+  description: "Find Your Files",
 };
 
 export default function RootLayout({ children }) {
