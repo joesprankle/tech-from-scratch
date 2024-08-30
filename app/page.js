@@ -39,13 +39,16 @@ function App() {
     // Fetch list of files in storage
     async function fetchFiles() {
       try {
-        const files = await list({path:'picture-submissions/'});
+        const result = await list({ path: 'picture-submissions/' });
+        // result is usually an object that contains an array under `results` or similar key
+        const files = result?.results || []; // Safely access the array or default to an empty array
         setFileList(files);
         console.log(files);
       } catch (error) {
         console.error('Error listing files:', error);
       }
     }
+    
 
     getUserAttributes();
     fetchFiles();
