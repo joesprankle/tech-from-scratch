@@ -39,8 +39,9 @@ function App() {
     // Fetch list of files in storage
     async function fetchFiles() {
       try {
-        const files = await list('picture-submissions/');
+        const files = await list({path:'picture-submissions/'});
         setFileList(files);
+        console.log(files);
       } catch (error) {
         console.error('Error listing files:', error);
       }
@@ -70,7 +71,7 @@ function App() {
         path: `picture-submissions/${file.name}`
       });
       // Refresh file list after upload
-      const files = await list('picture-submissions/', { level: 'public' });
+      const files = await list({path:'picture-submissions/'});
       setFileList(files);
     } catch (e) {
       console.log("error", e);
