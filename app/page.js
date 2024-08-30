@@ -109,24 +109,34 @@ function App() {
                 )}
               </div>
               <div className="mt-4">
+              <h1>Upload a File:</h1>
+              <div className="bg-white p-4 rounded-lg shadow-md">
                 <input type="file" id="file" onChange={handleFileChange} />
-                <button id="upload" onClick={handleUploadClick}>
+                <button id="upload" onClick={handleUploadClick} className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                   Upload File
                 </button>
+                </div>
               </div>
               <div className="mt-4">
-                <h2>Uploaded Files:</h2>
-                <ul>
+                <h1>Uploaded Files:</h1>
+                <div className="grid grid-cols-3 gap-4">
                   {Array.isArray(fileList) && fileList.map(file => (
-                    <li key={file.path}>
+                    <div key={file.path} className="bg-white p-4 rounded-lg shadow-md">
+                      <div className="font-semibold">{file.path.split('/').pop()}</div>
+                      <div className="text-sm text-gray-500">{(file.size / 1024 / 1024).toFixed(2)} MB</div>
                       <a href={file.url.toString()} target="_blank" rel="noopener noreferrer">
-                        {file.path.split('/').pop()} - {(file.size / 1024 / 1024).toFixed(2)} MB
+                        <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                          Download
+                        </button>
                       </a>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-              <button onClick={signOut}>Sign out</button>
+              <br />
+              <br />
+              <br />
+              <button onClick={signOut} className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-blue-600">Sign out</button>
             </main>
           </div>
         </Layout>
