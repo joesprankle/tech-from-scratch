@@ -9,7 +9,7 @@ import '@aws-amplify/ui-react/styles.css';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import Layout from './components/Layout';
 import Sidebar from './components/Sidebar';
-import { uploadData, downloadData, list } from "aws-amplify/storage";
+import { uploadData, downloadData, list, getUrl } from "aws-amplify/storage";
 
 Amplify.configure(outputs);
 
@@ -39,13 +39,21 @@ function App() {
     // Fetch list of files in storage
     async function fetchFiles() {
       try {
-        const result = await list({path:'picture-submissions/'});
-        // Ensure we're setting an array to fileList
-        setFileList(result.items || []);
-        console.log(JSON.stringify(result,null,2));
+        const result = await list({ path: 'picture-submissions/' });
+        console.log('Files:', result.items);
+
+        // Get URLs for each file
+        const filesWithUrls = await Promise.all(result.items.map(async (file) => {
+          const url = await getUrl({ path: file.path });
+          console.log('URL:', url);
+          console.log('URL:', url.url);
+          return { ...file, url: url.url };
+        }));
+
+        setFileList(filesWithUrls || []);
       } catch (error) {
         console.error('Error listing files:', error);
-        setFileList([]); // Set to empty array in case of error
+        setFileList([]);
       }
     }
 
