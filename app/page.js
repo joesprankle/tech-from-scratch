@@ -81,7 +81,7 @@ function App() {
         path: `picture-submissions/${file.name}`
       });
       // Refresh file list after upload
-      const files = await list({path:'picture-submissions/'});
+      const files = await list({ path: 'picture-submissions/' });
       setFileList(files);
     } catch (e) {
       console.log("error", e);
@@ -115,19 +115,17 @@ function App() {
                 </button>
               </div>
               <div className="mt-4">
-            <h2>Uploaded Files:</h2>
-            {Array.isArray(fileList) && fileList.length > 0 ? (
-              <ul>
-                {fileList.map((file, index) => (
-                  <li key={file.path || index}>
-                    {file.path}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No files uploaded yet.</p>
-            )}
-          </div>
+                <h2>Uploaded Files:</h2>
+                <ul>
+                  {Array.isArray(fileList) && fileList.map(file => (
+                    <li key={file.path}>
+                      <a href={file.url.toString()} target="_blank" rel="noopener noreferrer">
+                        {file.path.split('/').pop()} - {(file.size / 1024 / 1024).toFixed(2)} MB
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <button onClick={signOut}>Sign out</button>
             </main>
           </div>
